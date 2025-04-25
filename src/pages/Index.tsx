@@ -1,11 +1,15 @@
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
 import SkillPill from '@/components/SkillPill';
 import SectionHeader from '@/components/SectionHeader';
 import WorkExperienceItem from '@/components/WorkExperienceItem';
 import SkillRating from '@/components/SkillRating';
+import { Certificate } from 'lucide-react';
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-resume-light-bg min-h-screen">
       {/* Header */}
@@ -190,19 +194,20 @@ const Index = () => {
               <p><span className="font-semibold">Trade:</span> Professional Sales Qualification</p>
             </div>
 
-            {/* Certifications & Training */}
+            {/* Certificates Button */}
             <div className="mb-8">
-              <SectionHeader title="CERTIFICATIONS AND TRAINING" />
-              <ul className="list-disc pl-5 text-sm space-y-1">
-                <li>Genius Certificate, Micro</li>
-                <li>Genius Certificate Advanced, Dynamic Training Centers</li>
-                <li>Certificate in Business Management, Retail Training</li>
-                <li>Advanced MS Office Training, Dynamic Training</li>
-                <li>PHP & Java Advanced</li>
-                <li>JavaScript, UX Programming / UI Design</li>
-                <li>Customer Service Excellence, Centurion Systems</li>
-              </ul>
+              <SectionHeader title="CERTIFICATES" />
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => navigate('/certificates')}
+              >
+                <Certificate className="mr-2" />
+                View My Certificates
+              </Button>
             </div>
+            
+            {/* Remove the redundant Certifications & Training section */}
             
             {/* Accomplishments */}
             <div className="mb-8">
@@ -212,20 +217,6 @@ const Index = () => {
                 <li>Only manager in Centurion who achieved double-digit sales increases every quarter - business success stories wanted with company-team resolution</li>
                 <li>Secured a high-value Netbank Parts Contract through strategic proposal development and negotiations with technical teams for a feature release</li>
                 <li>Reduced shrinkage by 75% at Mezepoli through targeted technical solutions and increased profitability</li>
-              </ul>
-            </div>
-            
-            {/* Certificates & Training */}
-            <div className="mb-8">
-              <SectionHeader title="CERTIFICATES & TRAINING" />
-              <ul className="list-disc pl-5 text-sm space-y-1">
-                <li>MS Excel, Micro - Johannesburg 2022, Advanced</li>
-                <li>3rd Age PM Advanced, JoziHub.com 2021</li>
-                <li>Adobe Certificate, Micro 2020</li>
-                <li>UX Experience & Programming, Google 2019</li>
-                <li>MS Project Management Advanced, Dynamic Training Centers, 2019</li>
-                <li>Advanced Retail Management, Retail Academy, 2018</li>
-                <li>Customer Service Excellence, Centurion Systems, 2009</li>
               </ul>
             </div>
             

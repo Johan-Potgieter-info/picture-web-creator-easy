@@ -5,7 +5,7 @@ import SkillPill from '@/components/SkillPill';
 import SectionHeader from '@/components/SectionHeader';
 import WorkExperienceItem from '@/components/WorkExperienceItem';
 import SkillRating from '@/components/SkillRating';
-import { Certificate } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -202,7 +202,7 @@ const Index = () => {
                 className="w-full"
                 onClick={() => navigate('/certificates')}
               >
-                <Certificate className="mr-2" />
+                <FileText className="mr-2" />
                 View My Certificates
               </Button>
             </div>
